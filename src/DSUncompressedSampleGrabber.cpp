@@ -17,7 +17,7 @@ ULONG CBaseFilter::NonDelegatingRelease(void)
 /////////////////////// instantiation //////////////////////////
 
 DSUncompressedSampleGrabber::DSUncompressedSampleGrabber(IUnknown * pOuter, HRESULT * phr, BOOL ModifiesData)
-	: CVideoTransformFilter(FILTERNAME, (IUnknown*)pOuter, CLSID_SampleGrabber) {
+	: CVideoTransformFilter((LPCSTR)FILTERNAME, (IUnknown*)pOuter, CLSID_SampleGrabber) {
 	callback = NULL;
 	//printf("DSUncompressedSampleGrabber()\n");
 }
